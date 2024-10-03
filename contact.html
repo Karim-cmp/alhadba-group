@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">الهضبة جروب</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="#about">عن الشركة</a></li>
+                <li><a href="#properties">العقارات</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-form">
+        <h1>تواصل معنا</h1>
+        <form action="submit_form.php" method="POST">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">الرسالة:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 الهضبة جروب</p>
+        <div class="contact">
+            <p>تواصل معنا: <a href="mailto:info@alhadba.com">info@alhadba.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

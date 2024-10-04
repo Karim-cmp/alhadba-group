@@ -1,0 +1,36 @@
+#notification-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px; /* تحديد أقصى عرض لصندوق الإشعارات */
+}
+
+.notification {
+    background-color: #28a745; /* تغيير اللون إلى أخضر زاهي */
+    color: white;
+    padding: 15px; /* زيادة الحشو */
+    margin-bottom: 15px; /* زيادة المسافة بين الإشعارات */
+    border-radius: 10px; /* زيادة انحناء الزوايا */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* تحسين ظل الإشعار */
+    transition: transform 0.3s, opacity 0.3s; /* إضافة تأثيرات الانتقال */
+    animation: slide-in 0.5s forwards; /* إضافة تأثير حركة للإشعار */
+}
+
+/* إضافة تأثير حركة للإشعار عند الظهور */
+@keyframes slide-in {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* تغيير لون الخلفية عند تمرير الماوس فوق الإشعار */
+.notification:hover {
+    background-color: #218838; /* لون أغمق عند التمرير */
+    cursor: pointer; /* تغيير شكل المؤشر */
+}

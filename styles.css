@@ -1,0 +1,281 @@
+/* ملف CSS لتحسين تصميم الموقع */
+body {
+    font-family: 'Cairo', sans-serif; /* استخدام خط عربي */
+    background-color: #f4f4f4; /* لون خلفية الموقع */
+    color: #333; /* لون النص */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* تحسين تباعد الأسطر */
+}
+
+header {
+    background-color: #002d5b; /* لون خلفية الرأس */
+    color: white; /* لون النص */
+    padding: 20px; /* مساحة داخلية */
+    text-align: center; /* محاذاة للنص في المنتصف */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* ظل تحت الرأس */
+}
+
+nav {
+    display: flex; /* استخدام Flexbox لترتيب العناصر */
+    justify-content: center; /* محاذاة العناصر في المنتصف */
+    background-color: #003366; /* لون شريط التنقل */
+}
+
+nav a {
+    color: white; /* لون النص */
+    padding: 15px 20px; /* مساحة داخلية */
+    text-decoration: none; /* إزالة التسطير */
+    transition: background-color 0.3s, transform 0.3s; /* تأثير انتقال سلس */
+    border-radius: 5px; /* زوايا دائرية */
+}
+
+nav a:hover {
+    background-color: #0059b3; /* تأثير عند التمرير */
+    transform: scale(1.05); /* تأثير تكبير طفيف */
+}
+
+.container {
+    width: 90%; /* عرض الحاوية */
+    max-width: 1200px; /* أقصى عرض */
+    margin: auto; /* محاذاة تلقائية */
+    overflow: hidden; /* إخفاء الزائد */
+    padding: 20px; /* مساحة داخلية */
+}
+
+.property-card {
+    background: white; /* لون خلفية البطاقة */
+    margin: 20px 0; /* مساحة خارجية */
+    padding: 15px; /* مساحة داخلية */
+    border-radius: 8px; /* زوايا دائرية */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* ظل */
+    transition: transform 0.3s, box-shadow 0.3s; /* تأثير انتقال سلس */
+}
+
+.property-card:hover {
+    transform: scale(1.03); /* تأثير تكبير عند التمرير */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* ظل أقوى عند التمرير */
+}
+
+.property-card img {
+    width: 100%; /* عرض الصورة */
+    border-radius: 8px; /* زوايا دائرية للصورة */
+    transition: transform 0.3s; /* تأثير انتقال سلس */
+}
+
+.property-card img:hover {
+    transform: scale(1.05); /* تأثير تكبير للصورة عند التمرير */
+}
+
+footer {
+    background-color: #002d5b; /* لون خلفية الفوتر */
+    color: white; /* لون النص */
+    text-align: center; /* محاذاة للنص في المنتصف */
+    padding: 20px; /* مساحة داخلية */
+    position: relative; /* موضع نسبي */
+    bottom: 0; /* أسفل الصفحة */
+    width: 100%; /* عرض كامل */
+}
+
+.comparison-table {
+    width: 100%; /* عرض الجدول */
+    max-width: 1200px; /* أقصى عرض للجدول */
+    margin: 30px auto; /* محاذاة تلقائية */
+    border-collapse: collapse; /* دمج الحدود */
+}
+
+.comparison-header {
+    background-color: #e9ecef; /* لون خلفية الرأس */
+    padding: 15px; /* مساحة داخلية */
+    font-weight: bold; /* نص عريض */
+    text-align: center; /* محاذاة للنص في المنتصف */
+    border-bottom: 2px solid #ccc; /* حد سفلي */
+}
+
+.comparison-row {
+    padding: 10px; /* مساحة داخلية */
+    border-bottom: 1px solid #ddd; /* حد سفلي */
+}
+
+.comparison-label {
+    font-weight: bold; /* نص عريض */
+    background-color: #f1f1f1; /* لون خلفية */
+    padding: 10px; /* مساحة داخلية */
+    text-align: left; /* محاذاة لليسار */
+}
+
+.comparison-value {
+    padding: 10px; /* مساحة داخلية */
+    text-align: center; /* محاذاة للنص في المنتصف */
+}
+
+.comparison-value:nth-child(even) {
+    background-color: #f9f9f9; /* لون خلفية الصفوف الزوجية */
+}
+
+/* دردشة */
+#chat-box {
+    width: 350px; /* عرض صندوق الدردشة */
+    height: 450px; /* ارتفاع صندوق الدردشة */
+    position: fixed; /* موضع ثابت */
+    bottom: 20px; /* المسافة من الأسفل */
+    right: 20px; /* المسافة من اليمين */
+    background-color: #fff; /* لون الخلفية */
+    border: 1px solid #ccc; /* حد */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل */
+    display: flex; /* استخدام Flexbox */
+    flex-direction: column; /* ترتيب عمودي */
+    border-radius: 8px; /* زوايا دائرية */
+}
+
+#messages {
+    flex-grow: 1; /* مساحة مرنة للنصوص */
+    padding: 10px; /* مساحة داخلية */
+    overflow-y: auto; /* تمرير عمودي */
+}
+
+.message {
+    padding: 8px 12px; /* مساحة داخلية */
+    margin-bottom: 10px; /* مسافة بين الرسائل */
+    border-radius: 5px; /* زوايا دائرية */
+}
+
+.user-message {
+    background-color: #007bff; /* لون رسالة المستخدم */
+    color: #fff; /* لون النص */
+    align-self: flex-end; /* محاذاة إلى اليمين */
+}
+
+.admin-message {
+    background-color: #ccc; /* لون رسالة الإدارة */
+    color: #000; /* لون النص */
+    align-self: flex-start; /* محاذاة إلى اليسار */
+}
+
+#message-form {
+    display: flex; /* استخدام Flexbox */
+    border-top: 1px solid #ccc; /* حد علوي */
+}
+
+#message-input {
+    flex-grow: 1; /* مساحة مرنة */
+    padding: 10px; /* مساحة داخلية */
+    border: none; /* بدون حد */
+    border-right: 1px solid #ccc; /* حد يمين */
+    border-radius: 0 0 0 5px; /* زوايا دائرية */
+}
+
+#message-input:focus {
+    outline: none; /* إزالة الإطار عند التركيز */
+}
+
+#send-button {
+    padding: 10px; /* مساحة داخلية */
+    background-color: #007bff; /* لون الزر */
+    color: #fff; /* لون النص */
+    border: none; /* بدون حد */
+    cursor: pointer; /* تغيير شكل المؤشر */
+    transition: background-color 0.3s; /* تأثير انتقال سلس */
+    border-radius: 0 0 5px 0; /* زوايا دائرية */
+}
+
+#send-button:hover {
+    background-color: #0056b3; /* تأثير عند التمرير */
+}
+
+#comparison-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd; /* استخدام لون رمادي فاتح */
+    padding: 15px; /* زيادة padding لجعلها أكثر راحة */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* تحسين ظل الصندوق */
+    border-radius: 8px; /* إضافة زوايا دائرية */
+    transition: all 0.3s ease; /* إضافة تأثير انتقال عند عرض العناصر */
+}
+
+.comparison-item {
+    padding: 10px; /* زيادة padding لجعلها أكثر راحة */
+    margin-bottom: 10px; /* زيادة المسافة بين العناصر */
+    background-color: #f8f8f8; /* استخدام لون رمادي فاتح */
+    border: 1px solid #ccc; /* استخدام لون رمادي للحدود */
+    border-radius: 5px; /* إضافة زوايا دائرية */
+    transition: background-color 0.2s ease; /* تأثير انتقال عند التمرير */
+}
+
+.comparison-item:hover {
+    background-color: #e9e9e9; /* تغيير لون الخلفية عند التمرير */
+}
+
+#compare-button {
+    display: none;
+    background-color: #007bff; /* استخدام لون أزرق مشرق */
+    color: white;
+    padding: 12px; /* زيادة padding لجعل الزر أكثر راحة */
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* إضافة زوايا دائرية */
+    transition: background-color 0.3s; /* تأثير انتقال عند التمرير */
+}
+
+#compare-button:hover {
+    background-color: #0056b3; /* تغيير لون الخلفية عند التمرير */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.property-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.property-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.property-card h2 {
+    margin: 10px 0;
+}
+
+.property-card p {
+    margin: 5px 0;
+}
+
+.property-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.property-card a:hover {
+    background: #218838;
+}

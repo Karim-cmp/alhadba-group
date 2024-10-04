@@ -3,56 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الهضبة جروب - العقارات</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>الهضبة جروب - التسويق العقاري</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #002147;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-links {
+            margin-top: 10px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00aaff;
+        }
+
+        .hero-section {
+            background: url('assets/images/hero-background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            background-color: #00aaff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0088cc;
+        }
+
+        .search-section {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #e0e0e0;
+        }
+
+        .search-section form input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .properties-section {
+            padding: 20px;
+        }
+
+        .property-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            display: flex;
+            padding: 15px;
+        }
+
+        .property-card img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .property-title {
+            font-size: 1.2em;
+            color: #002147;
+        }
+
+        .footer {
+            background-color: #002147;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        #chat-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #messages {
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #message-form {
+            display: flex;
+            padding: 10px;
+        }
+
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        #send-button {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #send-button:hover {
+            background-color: #0088cc;
+        }
+        
+        /* Styling for highlighted texts */
+        .highlight-title {
+            font-size: 2.5em;
+            color: #f0a500; /* Bright orange color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-description {
+            font-size: 1.5em;
+            color: #ffcc00; /* Yellow color */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
 </head>
 <body>
+
     <header>
-        <div class="logo">الهضبة جروب</div>
-        <nav>
-            <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">عن الشركة</a></li>
-                <li><a href="#properties">العقارات</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
+        <div class="logo">
+            <h1>الهضبة جروب</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#search">بحث</a>
+            <a href="#properties">عقارات</a>
+            <a href="#contact">تواصل معنا</a>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <h1>مرحبًا بكم في الهضبة جروب</h1>
-        <p>نقدم أفضل العروض العقارية في السوق</p>
+    <section class="hero-section">
+        <h1 class="highlight-title">اكتشف أفضل العقارات</h1>
+        <p class="highlight-description">تجد هنا كل ما تحتاجه من عقارات سكنية وتجارية</p>
+        <button class="cta-button">ابدأ الآن</button>
     </section>
 
-    <section id="about">
-        <h2>عن الشركة</h2>
-        <p>نحن نعمل على تقديم أفضل الخدمات العقارية لعملائنا.</p>
+    <section class="search-section" id="search">
+        <h2>ابحث عن عقارك المثالي</h2>
+        <form>
+            <input type="text" placeholder="أدخل المدينة أو المنطقة" required>
+            <input type="text" placeholder="عدد الغرف" required>
+            <input type="text" placeholder="سعر من" required>
+            <input type="text" placeholder="سعر إلى" required>
+            <button type="submit">بحث</button>
+        </form>
     </section>
 
-    <section id="properties">
+    <section class="properties-section" id="properties">
         <h2>العقارات المتاحة</h2>
-        <div class="property-list">
-            <div class="property">
-                <img src="property1.jpg" alt="عقار 1">
-                <h3>عقار 1</h3>
-                <p>وصف العقار 1.</p>
+        <div class="property-card">
+            <img src="assets/images/property1.jpg" alt="عقار 1">
+            <div class="property-details">
+                <h3 class="property-title">شقة في وسط المدينة</h3>
+                <p class="property-price">150,000 جنيه</p>
+                <p>2 غرفة نوم، 1 حمام، مطبخ مفتوح</p>
+                <button class="cta-button">تفاصيل أكثر</button>
             </div>
-            <div class="property">
-                <img src="property2.jpg" alt="عقار 2">
-                <h3>عقار 2</h3>
-                <p>وصف العقار 2.</p>
+        </div>
+        <div class="property-card">
+            <img src="assets/images/property2.jpg" alt="عقار 2">
+            <div class="property-details">
+                <h3 class="property-title">فيلا فاخرة</h3>
+                <p class="property-price">2,000,000 جنيه</p>
+                <p>5 غرفة نوم، 4 حمام، حديقة خاصة</p>
+                <button class="cta-button">تفاصيل أكثر</button>
             </div>
-            <!-- أضف المزيد من العقارات حسب الحاجة -->
+        </div>
+        <div class="property-card">
+            <img src="assets/images/property3.jpg" alt="عقار 3">
+            <div class="property-details">
+                <h3 class="property-title">مكتب للإيجار</h3>
+                <p class="property-price">20,000 جنيه شهريًا</p>
+                <p>مساحة 100 متر مربع، موقع ممتاز</p>
+                <button class="cta-button">تفاصيل أكثر</button>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2024 الهضبة جروب</p>
-        <div class="contact">
-            <p>تواصل معنا: <a href="mailto:info@alhadba.com">info@alhadba.com</a></p>
+    <footer class="footer" id="contact">
+        <p>© 2024 شركة الهضبة جروب. جميع الحقوق محفوظة.</p>
+        <div>
+            <a href="#" style="color: #ffffff; margin: 0 10px;">فيس بوك</a>
+            <a href="#" style="color: #ffffff; margin: 0 10px;">تويتر</a>
+            <a href="#" style="color: #ffffff; margin: 0 10px;">إنستجرام</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <div id="chat-box">
+        <div id="messages">
+            <p>مرحبًا! كيف يمكنني مساعدتك؟</p>
+        </div>
+        <form id="message-form">
+            <input type="text" id="message-input" placeholder="اكتب رسالتك هنا..." required>
+            <button type="submit" id="send-button">إرسال</button>
+        </form>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const sendButton = document.getElementById('send-button');
+        const messageInput = document.getElementById('message-input');
+        const messages = document.getElementById('messages');
+
+        sendButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const messageText = messageInput.value;
+            if (messageText.trim() !== '') {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = messageText;
+                messages.appendChild(newMessage);
+                messageInput.value = '';
+            }
+        });
+
+        // لعرض صندوق الدردشة
+        document.querySelector('.cta-button').addEventListener('click', function () {
+            chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
 </body>
 </html>
+<form method="POST" action="submit_review.php"> <!-- تأكد من تغيير 'submit_review.php' إلى اسم الملف الصحيح -->
+    <input type="hidden" name="property_id" value="<?php echo $property_id; ?>"> <!-- تأكد من ضبط هذا بشكل صحيح -->
+    <textarea name="review" placeholder="اكتب تعليقك هنا..." required></textarea>
+    <select name="rating" required>
+        <option value="">اختر تقييم</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button type="submit">أرسل التعليق</button>
+</form>

@@ -1,0 +1,74 @@
+#chat-box {
+    width: 350px; /* زيادة العرض قليلاً */
+    height: 450px; /* زيادة الارتفاع قليلاً */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff; /* لون الخلفية */
+    border: 1px solid #ddd; /* تعديل لون الحدود */
+    border-radius: 8px; /* إضافة زوايا مستديرة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* تحسين تأثير الظل */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cairo', sans-serif; /* استخدام خط يتناسب مع الثقافة */
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; /* استخدام auto بدلاً من scroll */
+    border-radius: 0 0 8px 8px; /* تحسين الزوايا السفلية */
+    background-color: #f9f9f9; /* لون خلفية الرسائل */
+}
+
+.message {
+    padding: 10px 15px; /* زيادة الحشو قليلاً */
+    margin-bottom: 10px;
+    border-radius: 8px; /* زيادة درجة الاستدارة */
+    max-width: 80%; /* تحديد عرض الرسالة */
+}
+
+.user-message {
+    background-color: #007bff; /* لون رسالة المستخدم */
+    color: #ffffff;
+    align-self: flex-end;
+}
+
+.admin-message {
+    background-color: #e0e0e0; /* لون رسالة المدير */
+    color: #333333; /* تعديل لون النص */
+    align-self: flex-start;
+}
+
+#message-form {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 5px; /* إضافة padding */
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px; /* تحسين الزوايا */
+    background-color: #f1f1f1; /* لون خلفية حقل الإدخال */
+}
+
+#message-input:focus {
+    outline: none; /* إزالة خط التركيز */
+    background-color: #ffffff; /* تغيير لون الخلفية عند التركيز */
+}
+
+#send-button {
+    padding: 10px;
+    background-color: #007bff; /* لون زر الإرسال */
+    color: #ffffff;
+    border: none;
+    border-radius: 0 5px 5px 0; /* تحسين الزوايا */
+    cursor: pointer;
+    transition: background-color 0.3s; /* إضافة تأثير عند التمرير */
+}
+
+#send-button:hover {
+    background-color: #0056b3; /* تغيير لون الزر عند التمرير */
+}

@@ -14,24 +14,35 @@
         <button type="submit">إرسال المراجعة</button>
     </form>
 
-    <!-- هنا يمكنك إضافة كود لعرض المراجعات السابقة -->
     <div id="reviews-list">
         <h4>المراجعات السابقة</h4>
-        <div class="review">
-            <p><strong>اسم المراجع:</strong> <span>مستخدم 1</span></p>
-            <p><strong>التقييم:</strong> ★★★★★</p>
-            <p>مراجعة رائعة! كانت تجربة رائعة.</p>
-        </div>
-        <div class="review">
-            <p><strong>اسم المراجع:</strong> <span>مستخدم 2</span></p>
-            <p><strong>التقييم:</strong> ★★★★☆</p>
-            <p>كان كل شيء جيدًا، ولكن يمكن تحسين الخدمة.</p>
-        </div>
-        <!-- يمكنك إضافة المزيد من المراجعات هنا -->
+        <?php
+        // جلب المراجعات السابقة
+        $review_stmt = $conn->prepare("SELECT * FROM reviews WHERE property_id = ? ORDER BY created_at DESC");
+        $review_stmt->bind_param("i", $property_id);
+        $review_stmt->execute();
+        $reviews_result = $review_stmt->get_result();
+
+        if ($reviews_result->num_rows > 0) {
+            while ($review = $reviews_result->fetch_assoc()) {
+                echo '<div class="review">';
+                echo '<p><strong>اسم المراجع:</strong> <span>' . htmlspecialchars($review['reviewer_name']) . '</span></p>';
+                echo '<p><strong>التقييم:</strong> ' . str_repeat('★', $review['rating']) . str_repeat('☆', 5 - $review['rating']) . '</p>';
+                echo '<p>' . htmlspecialchars($review['review']) . '</p>';
+                echo '<p><em>تاريخ: ' . htmlspecialchars($review['created_at']) . '</em></p>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>لا توجد مراجعات بعد.</p>';
+        }
+
+        $review_stmt->close();
+        ?>
     </div>
 </section>
 
 <style>
+    /* تنسيقات القسم التعليقات والمراجعات */
     #reviews {
         background-color: #f8f9fa;
         padding: 20px;
@@ -111,4 +122,3 @@
         margin: 5px 0;
     }
 </style>
-    

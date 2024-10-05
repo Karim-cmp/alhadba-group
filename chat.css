@@ -26,6 +26,8 @@
     margin-bottom: 10px;
     border-radius: 8px; /* زيادة درجة الاستدارة */
     max-width: 80%; /* تحديد عرض الرسالة */
+    transition: opacity 0.3s; /* إضافة تأثير انتقال عند ظهور الرسالة */
+    opacity: 0; /* بدء الرسالة بكونها مخفية */
 }
 
 .user-message {
@@ -71,4 +73,12 @@
 
 #send-button:hover {
     background-color: #0056b3; /* تغيير لون الزر عند التمرير */
+}
+
+/* تحسين الاستجابة لتصميم الأجهزة المحمولة */
+@media (max-width: 400px) {
+    #chat-box {
+        width: 90%; /* عرض أكبر للأجهزة المحمولة */
+        height: auto; /* السماح بالارتفاع التلقائي */
+    }
 }

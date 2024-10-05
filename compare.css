@@ -1,43 +1,22 @@
-/* تصميم مربع المقارنة */
-#comparison-box {
-    position: fixed; /* موضع ثابت */
-    bottom: 20px; /* المسافة من الأسفل */
-    left: 20px; /* المسافة من اليسار */
-    width: 350px; /* عرض مربع المقارنة */
-    background-color: #fff; /* لون الخلفية */
-    border: 1px solid #ccc; /* حد */
-    padding: 15px; /* مساحة داخلية */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* ظل */
-    border-radius: 8px; /* زوايا دائرية */
-    font-family: 'Cairo', sans-serif; /* استخدام خط عربي */
-    z-index: 1000; /* طبقة أعلى */
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        /* هنا يأتي كود CSS الذي قدمته */
+    </style>
+</head>
+<body>
 
-.comparison-item {
-    padding: 10px; /* مساحة داخلية */
-    margin-bottom: 10px; /* مسافة بين العناصر */
-    background-color: #f9f9f9; /* لون الخلفية */
-    border: 1px solid #ccc; /* حد */
-    border-radius: 5px; /* زوايا دائرية */
-    transition: background-color 0.3s; /* تأثير انتقال سلس */
-}
+<div id="comparison-box">
+    <h3>مقارنة المنتجات</h3>
+    <div class="comparison-item">المنتج 1</div>
+    <div class="comparison-item">المنتج 2</div>
+    <div class="comparison-item">المنتج 3</div>
+    <div id="compare-button">قارن الآن</div>
+</div>
 
-.comparison-item:hover {
-    background-color: #e0f7fa; /* تغيير لون الخلفية عند التمرير */
-}
-
-#compare-button {
-    display: none; /* إخفاء الزر بشكل افتراضي */
-    background-color: #007bff; /* لون الزر */
-    color: white; /* لون النص */
-    padding: 12px; /* مساحة داخلية */
-    text-align: center; /* محاذاة للنص في المنتصف */
-    cursor: pointer; /* تغيير شكل المؤشر */
-    margin-top: 10px; /* مساحة فوق الزر */
-    border-radius: 5px; /* زوايا دائرية */
-    transition: background-color 0.3s; /* تأثير انتقال سلس */
-}
-
-#compare-button:hover {
-    background-color: #0056b3; /* تأثير عند التمرير */
-}
+</body>
+</html>

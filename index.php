@@ -5,12 +5,13 @@ $username = "bobkaremkoko@gmail.com"; // اسم المستخدم الخاص بق
 $password = "karimsopaih3110101"; // كلمة المرور الخاصة بقاعدة البيانات
 $dbname = "اضافة عقار"; // اسم قاعدة البيانات
 
-// إنشاء الاتصال
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// التحقق من الاتصال
-if ($conn->connect_error) {
-    die("فشل الاتصال: " . $conn->connect_error);
+try {
+    // إنشاء الاتصال باستخدام PDO
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    // تعيين إعدادات الخطأ
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "تم الاتصال بقاعدة البيانات بنجاح!";
+} catch (PDOException $e) {
+    echo "فشل الاتصال: " . $e->getMessage();
 }
-echo "تم الاتصال بقاعدة البيانات بنجاح!";
 ?>

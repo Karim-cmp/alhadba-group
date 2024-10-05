@@ -1,43 +1,52 @@
+// قائمة لتخزين معرفات العقارات المقارنة
 let comparisonList = [];
 
-// إضافة عقار إلى قائمة المقارنة
+// وظيفة لإضافة العقار إلى قائمة المقارنة
 function addToComparison(propertyId, propertyName) {
+    // التحقق مما إذا كانت القائمة قد وصلت إلى الحد الأقصى
     if (comparisonList.length >= 3) {
         alert("لا يمكنك مقارنة أكثر من 3 عقارات.");
         return;
     }
 
-    if (!comparisonList.includes(propertyId)) {
-        comparisonList.push(propertyId);
+    // التحقق مما إذا كان العقار موجودًا بالفعل في القائمة
+    if (!comparisonList.some(item => item.id === propertyId)) {
+        // إضافة العقار إلى القائمة
+        comparisonList.push({ id: propertyId, name: propertyName });
         updateComparisonList();
     } else {
         alert("العقار موجود بالفعل في قائمة المقارنة.");
     }
 }
 
-// تحديث قائمة المقارنة
+// وظيفة لتحديث عرض قائمة المقارنة
 function updateComparisonList() {
-    const comparisonBox = document.getElementById('comparison-box');
-    comparisonBox.innerHTML = ''; // إعادة تعيين المحتوى
+    const comparisonDisplay = document.getElementById('comparison-display');
+    comparisonDisplay.innerHTML = ""; // تفريغ المحتوى الحالي
 
-    comparisonList.forEach(propertyId => {
-        const propertyElement = document.createElement('div');
-        propertyElement.className = 'comparison-item';
-        propertyElement.innerText = `عقار ID: ${propertyId}`;
-        comparisonBox.appendChild(propertyElement);
+    // إضافة العقارات المضافة للقائمة إلى العرض
+    comparisonList.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item.name; // استخدام اسم العقار
+        comparisonDisplay.appendChild(listItem);
     });
-
-    // إظهار أو إخفاء زر المقارنة بناءً على عدد العناصر
-    document.getElementById('compare-button').style.display = comparisonList.length > 0 ? 'block' : 'none';
 }
 
-// مقارنة العقارات
+// وظيفة لمقارنة العقارات
 function compareProperties() {
     if (comparisonList.length < 2) {
         alert("يرجى إضافة عقارين على الأقل للمقارنة.");
         return;
     }
 
-    alert("مقارنة العقارات: " + comparisonList.join(', '));
+    // عرض قائمة العقارات للمقارنة
+    const propertyNames = comparisonList.map(item => item.name).join(', ');
+    alert("مقارنة العقارات: " + propertyNames);
+
     // يمكنك استخدام AJAX لإرسال القائمة إلى السيرفر وعرض صفحة مقارنة
 }
+
+// مثال لاستخدام الدالة
+// addToComparison(1, "عقار في الجيزة");
+// addToComparison(2, "شقة في القاهرة");
+// addToComparison(3, "فيلا في الإسكندرية");

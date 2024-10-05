@@ -1,3 +1,4 @@
+/* إعدادات عامة للصفحة */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -5,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* رأس الصفحة */
 header {
     background-color: #002147;
     color: white;
@@ -12,12 +14,14 @@ header {
     text-align: center;
 }
 
+/* روابط التنقل */
 .nav-links a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
 }
 
+/* قسم البطل */
 .hero-section {
     background: url('hero-image.jpg') no-repeat center center/cover;
     padding: 50px 0;
@@ -25,6 +29,7 @@ header {
     color: white;
 }
 
+/* تسليط الضوء على العناوين */
 .highlight-title {
     font-size: 2.5em;
     margin: 0;
@@ -34,9 +39,11 @@ header {
 .highlight-description {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #ff7f27;
+    color: #ffcc00; /* لون جديد */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* إضافة ظل للنص */
 }
 
+/* زر الدعوة إلى العمل */
 .cta-button {
     background-color: #00aaff;
     color: white;
@@ -46,20 +53,25 @@ header {
     cursor: pointer;
 }
 
-.search-section, .add-property-section, .favorites-section {
+/* الأقسام المختلفة */
+.search-section,
+.add-property-section,
+.favorites-section {
     padding: 20px;
     background-color: white;
     text-align: center;
 }
 
-.search-section input, 
-.add-property-section input, 
+.search-section input,
+.add-property-section input,
 .chat-area input {
     margin: 10px;
     padding: 10px;
-    width: 200px;
+    width: calc(100% - 40px); /* جعل العرض يتناسب مع الحاوية */
+    max-width: 300px; /* الحد الأقصى للعرض */
 }
 
+/* قسم العقارات */
 .properties-section {
     padding: 20px;
 }
@@ -70,14 +82,17 @@ header {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 20px;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s; /* إضافة تأثير التحول */
 }
 
 .property-card:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px); /* إضافة تأثير للتحريك عند التحويم */
 }
 
-.faq-section, .chat-area {
+/* قسم الأسئلة الشائعة ومنطقة الدردشة */
+.faq-section,
+.chat-area {
     padding: 20px;
 }
 
@@ -88,6 +103,7 @@ header {
     border-radius: 5px;
 }
 
+/* منطقة الدردشة */
 .chat-area {
     margin-top: 20px;
     background-color: #f5f5f5;
@@ -95,6 +111,7 @@ header {
     border-radius: 5px;
 }
 
+/* تذييل الصفحة */
 footer {
     text-align: center;
     padding: 15px;
@@ -102,110 +119,118 @@ footer {
     color: white;
 }
 
+/* صندوق الدردشة */
 #chat-box {
-    width: 350px; 
-    height: 450px; 
+    width: 350px;
+    height: 450px;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ffffff; 
-    border: 1px solid #ddd; 
-    border-radius: 12px; 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    font-family: 'Cairo', sans-serif; 
-    overflow: hidden; 
+    font-family: 'Cairo', sans-serif;
+    overflow: hidden;
 }
 
+/* مساحة الرسائل */
 #messages {
     flex-grow: 1;
     padding: 15px;
-    overflow-y: auto; 
-    border-radius: 0 0 12px 12px; 
-    background-color: #f9f9f9; 
+    overflow-y: auto;
+    border-radius: 0 0 12px 12px;
+    background-color: #f9f9f9;
 }
 
+/* تصميم الرسائل */
 .message {
-    padding: 10px 15px; 
+    padding: 10px 15px;
     margin-bottom: 10px;
-    border-radius: 12px; 
-    max-width: 80%; 
-    transition: opacity 0.3s, transform 0.3s; 
-    opacity: 0; 
-    transform: translateY(10px); 
+    border-radius: 12px;
+    max-width: 80%;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
 }
 
+/* رسائل المستخدم والإدارة */
 .user-message {
-    background-color: #007bff; 
+    background-color: #007bff;
     color: #ffffff;
     align-self: flex-end;
 }
 
 .admin-message {
-    background-color: #e0e0e0; 
-    color: #333333; 
+    background-color: #e0e0e0;
+    color: #333333;
     align-self: flex-start;
 }
 
+/* نموذج إدخال الرسالة */
 #message-form {
     display: flex;
     border-top: 1px solid #ddd;
-    padding: 5px; 
-    background-color: #ffffff; 
+    padding: 5px;
+    background-color: #ffffff;
 }
 
+/* إدخال الرسالة */
 #message-input {
     flex-grow: 1;
     padding: 10px;
     border: none;
-    border-radius: 5px 0 0 5px; 
-    background-color: #f1f1f1; 
+    border-radius: 5px 0 0 5px;
+    background-color: #f1f1f1;
 }
 
+/* تحسين تركيز إدخال الرسالة */
 #message-input:focus {
-    outline: none; 
-    background-color: #ffffff; 
+    outline: none;
+    background-color: #ffffff;
 }
 
+/* زر إرسال الرسالة */
 #send-button {
     padding: 10px;
-    background-color: #007bff; 
+    background-color: #007bff;
     color: #ffffff;
     border: none;
-    border-radius: 0 5px 5px 0; 
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; 
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #send-button:hover {
-    background-color: #0056b3; 
-    transform: scale(1.05); 
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* تحسين الاستجابة لتصميم الأجهزة المحمولة */
 @media (max-width: 400px) {
     #chat-box {
-        width: 90%; 
-        height: auto; 
+        width: 90%;
+        height: auto;
     }
 }
 
 /* تصميم مربع الإشعارات */
 #notification-box {
-    position: fixed; /* لضمان ظهور الإشعارات في مكان ثابت */
-    top: 20px; /* المسافة من أعلى الصفحة */
-    right: 20px; /* المسافة من يمين الصفحة */
-    z-index: 1000; /* جعل الإشعارات فوق العناصر الأخرى */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .notification {
-    background-color: #28a745; /* لون خلفية الإشعار */
-    color: white; /* لون النص */
-    padding: 10px; /* الحشو */
-    margin-bottom: 10px; /* المسافة بين الإشعارات */
-    border-radius: 5px; /* زوايا مستديرة */
-    animation: fadeIn 0.5s; /* تأثير ظهور للإشعار */
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    animation: fadeIn 0.5s;
 }
 
 /* تأثير الفيد في */

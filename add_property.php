@@ -1,8 +1,10 @@
 <?php
+// ملف الاتصال بقاعدة البيانات
 include 'database.php';
 
 // تحقق من أن الطلب هو POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // استرجاع بيانات العقار من النموذج
     $name = $_POST['property_name'];
     $description = $_POST['property_description'];
     $price = $_POST['property_price'];
@@ -22,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt->execute()) {
             echo "تم إضافة العقار بنجاح";
         } else {
-            echo "حدث خطأ: " . $stmt->error;
+            error_log("خطأ في تنفيذ الاستعلام: " . $stmt->error); // تسجيل الخطأ في السجل
+            echo "حدث خطأ: يرجى المحاولة لاحقاً.";
         }
         
         // إغلاق البيان
@@ -30,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "حدث خطأ في تحميل الصورة.";
     }
-
-    // إغلاق الاتصال
-    $conn->close();
 }
+
+// أغلق الاتصال بعد الانتهاء
+$conn->close();
 ?>

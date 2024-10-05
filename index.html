@@ -45,12 +45,12 @@
         .highlight-title {
             font-size: 2.5em;
             margin: 0;
-            color: #002147;
+            color: #ff7f27;
         }
         .highlight-description {
             font-size: 1.5em;
             margin: 10px 0;
-            color: #ff7f27;
+            color: #fff;
         }
         .cta-button {
             background-color: #00aaff;
@@ -162,7 +162,7 @@
     <button onclick="toggleRegister()">إنشاء حساب جديد</button>
     <div id="register-form" style="display: none;">
         <h3>تسجيل حساب جديد</h3>
-        <form id="register-form-inner">
+        <form id="register-form-inner" action="register.php" method="POST">
             <input type="text" name="username" placeholder="اسم المستخدم" required>
             <input type="email" name="email" placeholder="البريد الإلكتروني" required>
             <input type="password" name="password" placeholder="كلمة المرور" required>
@@ -218,38 +218,30 @@
 </section>
 
 <section class="favorites-section" id="favorites">
-    <h2>عقارات المفضلة</h2>
-    <ul id="favorite-properties">
-        <!-- Favorite properties will be listed here -->
-    </ul>
+    <h2>العقارات المفضلة</h2>
+    <div id="favorites-list"></div>
 </section>
 
 <section class="comments-section" id="reviews">
-    <h2>آرائكم وتعليقاتكم</h2>
-    <form id="comment-form">
-        <textarea placeholder="أكتب تعليقك هنا..." required></textarea>
-        <button type="submit" class="cta-button">إرسال</button>
-    </form>
-    <ul id="comments-list">
-        <!-- Comments will be listed here -->
-    </ul>
+    <h2>تقييمات الزوار</h2>
+    <textarea placeholder="اكتب تقييمك هنا"></textarea>
+    <button onclick="submitReview()" class="cta-button">إرسال</button>
 </section>
 
 <section class="faq-section" id="faq">
     <h2>الأسئلة الشائعة</h2>
     <div class="faq-item">
-        <h3>سؤال 1؟</h3>
-        <p>إجابة السؤال 1.</p>
+        <strong>ما هي سياسة الخصوصية الخاصة بكم؟</strong>
+        <p>نحن نحترم خصوصيتك ونعمل على حماية بياناتك الشخصية.</p>
     </div>
     <div class="faq-item">
-        <h3>سؤال 2؟</h3>
-        <p>إجابة السؤال 2.</p>
+        <strong>كيف يمكنني التواصل معكم؟</strong>
+        <p>يمكنك التواصل معنا عبر صفحة الاتصال أو عبر الهاتف.</p>
     </div>
 </section>
 
 <footer>
-    <p>جميع الحقوق محفوظة &copy; 2024 الهضبة جروب</p>
-    <p>تواصل معنا: info@alhadbagroup.com</p>
+    <p>© 2024 الهضبة جروب. جميع الحقوق محفوظة.</p>
 </footer>
 
 <script>
@@ -257,48 +249,22 @@
         const registerForm = document.getElementById('register-form');
         registerForm.style.display = registerForm.style.display === 'none' ? 'block' : 'none';
     }
-
+    
     function addToFavorites(id, name) {
-        const favoritesList = document.getElementById('favorite-properties');
-        const listItem = document.createElement('li');
-        listItem.textContent = name;
-        favoritesList.appendChild(listItem);
-        alert(name + " تمت إضافته إلى المفضلة!");
+        const favoritesList = document.getElementById('favorites-list');
+        favoritesList.innerHTML += `<p>${name}</p>`;
+        alert(`${name} تم إضافته للمفضلة.`);
     }
 
     function addToComparison(id, name) {
-        alert(name + " تمت إضافته للمقارنة!");
+        alert(`${name} تم إضافته للمقارنة.`);
+    }
+
+    function submitReview() {
+        alert("شكرًا لتقييمك!");
     }
 </script>
 
 </body>
 </html>
-<div id="notification-box">
-    <div class="notification">
-        تم الاتصال بقاعدة البيانات بنجاح!
-    </div>
-    <div class="notification">
-        هناك إشعار جديد!
-    </div>
-</div>
-<div id="chat-box">
-    <div id="messages"></div>
-    <form id="message-form">
-        <input type="text" id="message-input" placeholder="اكتب رسالتك هنا..." required>
-        <button type="submit">إرسال</button>
-    </form>
-</div>
-<html>
-    <head>
-        <title>تنبيه جديد عن عقار</title>
-        <style>
-            body { font-family: Arial, sans-serif; }
-            .container { padding: 20px; border: 1px solid #ccc; }
-            h1 { color: #333; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>تنبيه جديد عن عقار</h1>
-            <p>
-                
+س
